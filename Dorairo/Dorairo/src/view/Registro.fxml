@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="611.0" prefWidth="913.0">
+         <children>
+            <Label layoutX="138.0" layoutY="216.0" text="Inicia sesión">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="128.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/images/logo.jpg" />
+               </image>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="627.0" fitWidth="531.0" layoutX="399.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/images/escenario.png" />
+               </image>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <GaussianBlur />
+                     </input>
+                  </InnerShadow>
+               </effect>
+            </ImageView>
+            <Label layoutX="69.0" layoutY="262.0" text="Usuario">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Label>
+            <Label layoutX="69.0" layoutY="337.0" text="Contraseña">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Label>
+            <TextField layoutX="69.0" layoutY="297.0" prefHeight="25.0" prefWidth="261.0">
+               <effect>
+                  <GaussianBlur />
+               </effect></TextField>
+            <TextField layoutX="69.0" layoutY="367.0" prefHeight="25.0" prefWidth="261.0">
+               <effect>
+                  <GaussianBlur />
+               </effect></TextField>
+            <Button layoutX="65.0" layoutY="420.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="279.0" style="-fx-background-color: turquoise;" text="LOG IN">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Button>
+            <Label layoutX="114.0" layoutY="526.0" text="¿Todavia no tienes una cuenta?">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Label>
+            <Label layoutX="174.0" layoutY="545.0" text="Pincha aquí" textFill="#1016c9">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Label>
+            <Label layoutX="65.0" layoutY="494.0" text="--------------------------- O ------------------------">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </Label>
+            <AnchorPane layoutX="301.0" layoutY="49.0" prefHeight="548.0" prefWidth="455.0">
+               <children>
+                  <Pane layoutY="3.0" prefHeight="543.0" prefWidth="455.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="124.0" layoutY="27.0" text="Crear cuenta nueva">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="67.0" layoutY="84.0" text="Usuario">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="65.0" layoutY="117.0" prefHeight="34.0" prefWidth="326.0" />
+                        <TextField layoutX="65.0" layoutY="201.0" prefHeight="34.0" prefWidth="326.0" />
+                        <TextField layoutX="65.0" layoutY="290.0" prefHeight="34.0" prefWidth="326.0" />
+                        <TextField layoutX="65.0" layoutY="379.0" prefHeight="34.0" prefWidth="326.0" />
+                        <Label layoutX="65.0" layoutY="166.0" text="Correo">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="65.0" layoutY="254.0" text="Nombre">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="65.0" layoutY="338.0" text="Contraseña">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="155.0" layoutY="443.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="152.0" style="-fx-background-color: turquoise;" text="Registrase">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
