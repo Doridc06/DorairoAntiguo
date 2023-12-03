@@ -1,59 +1,135 @@
 package controller;
 
+import java.io.IOException;
 
+import application.Main;
+import constants.Constants;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import utilities.Utils;
 
 public class LoginController {
-    @FXML
-    private Label labelTitulo;
 
-    @FXML
-    private ImageView imageViewLogo;
+	@FXML
+	private Button btnLogin;
 
-    @FXML
-    private TextField textFieldUsuario;
+	@FXML
+	private ImageView imgLogo;
 
-    @FXML
-    private TextField textFieldContrasena;
+	@FXML
+	private ImageView imgPortada;
 
-    @FXML
-    private Button buttonLogin;
+	@FXML
+	private Label lblPulsaAqui;
 
-    // Otros campos y métodos necesarios
+	@FXML
+	private PasswordField pwContrasena;
 
-    // Método llamado cuando se presiona el botón de inicio de sesión
-    @FXML
-    private void handleLoginButtonAction() {
-        String usuario = textFieldUsuario.getText();
-        String contrasena = textFieldContrasena.getText();
+	@FXML
+	private StackPane stackPaneLogo;
 
-        // Lógica de autenticación (puedes implementar tu lógica de inicio de sesión aquí)
+	@FXML
+	private TextField txtUsuario;
 
-        if (autenticar(usuario, contrasena)) {
-            mostrarAlerta("Inicio de sesión exitoso", "¡Bienvenido, " + usuario + "!");
-        } else {
-            mostrarAlerta("Error de inicio de sesión", "Usuario o contraseña incorrectos");
-        }
-    }
+	private Scene scene;
 
-    // Método de ejemplo para la lógica de autenticación (puedes reemplazarlo con tu propia lógica)
-    private boolean autenticar(String usuario, String contrasena) {
-        // Aquí implementarías tu lógica de autenticación (por ejemplo, consultar una base de datos)
-        // Este es solo un ejemplo simple
-        return usuario.equals("usuarioEjemplo") && contrasena.equals("contrasenaEjemplo");
-    }
+	private Stage stage;
 
-    // Método de ejemplo para mostrar una alerta
-    private void mostrarAlerta(String titulo, String contenido) {
-        // Puedes personalizar este método según las necesidades de tu aplicación
-        // Aquí se muestra una alerta simple
-        System.out.println(titulo + ": " + contenido);
-    }
+	@FXML
+	/**
+	 * Gestiona el inicio de sesion del usuario
+	 * 
+	 * @param event
+	 */
+	void handleLoginButtonAction(MouseEvent event) {
+		String usuario = txtUsuario.getText();
+		String contrasena = pwContrasena.getText();
 
-    // Otros métodos y lógica según sea necesario
+		// Comprueba que exista un perfil con ese usuario y contraseñas
+		if (Main.comprobarPerfil(usuario, contrasena)) {
+			Utils.mostrarAlerta("Inicio de sesión exitoso. ¡Bienvenido, " + usuario + "!", Constants.INFORMATION_TYPE);
+		} else {
+			Utils.mostrarAlerta("Error de inicio de sesión. Usuario o contraseña incorrectos", Constants.ERROR_TYPE);
+		}
+		vaciarCampos();
+	}
+
+	/**
+	 * Elimina todo el contenido que se hubiera introducido en los campos de la
+	 * pantalla
+	 */
+	public void vaciarCampos() {
+		txtUsuario.setText("");
+		pwContrasena.setText("");
+	}
+
+	@FXML
+	/**
+	 * Muestra la pantalla de registro para crear una nueva cuenta
+	 * 
+	 * @param event
+	 */
+	void pinchaAquiRegistroPressed(MouseEvent event) {
+		try {
+			vaciarCampos();
+			// Ruta al registro
+			FXMLLoader registroLoader = new FXMLLoader(getClass().getResource(Constants.URL_REGISTRO_FXML));
+			Parent registroRoot = registroLoader.load();
+
+			// Asigna la ventana del registro al nuevo stage
+			Stage stageRegistro = new Stage();
+			Scene registroScene = new Scene(registroRoot);
+			stageRegistro.setScene(registroScene);
+
+			// Cambia el icono de la ventana
+			Image icon = new Image(getClass().getResourceAsStream(Constants.URL_LOGO_AMPLIADO));
+			stageRegistro.getIcons().add(icon);
+
+			// Cambia el titulo de la ventana
+			stageRegistro.setTitle("Registro");
+
+			// Define el tipo de modalidad
+			stageRegistro.initModality(Modality.APPLICATION_MODAL);
+
+			// Inhabilita la redimension de la ventana
+			stageRegistro.setResizable(false);
+
+			// Aplica el desenfoque a la escena
+			setSceneAndStage();
+			BoxBlur blur = new BoxBlur(10, 10, 3);
+			scene.getRoot().setEffect(blur);
+
+			// Muestra la pantalla de Registro
+			stageRegistro.showAndWait();
+
+			// Desactiva el efecto de desenfoque
+			scene.getRoot().setEffect(null);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Asigna los valores correspondientes del stage y el scene
+	 * 
+	 */
+	public void setSceneAndStage() {
+		scene = btnLogin.getScene();
+		stage = (Stage) scene.getWindow();
+	}
+
 }
