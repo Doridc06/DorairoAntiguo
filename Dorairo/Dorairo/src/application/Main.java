@@ -16,7 +16,7 @@ import utilities.Utils;
 
 public class Main extends Application {
 
-	// Lista donde se guardan cada uno de los perfiles registrados
+	/** Lista donde se guardan cada uno de los perfiles registrados */
 	private static List<Perfil> listaPerfiles = new ArrayList<>();
 
 	/**

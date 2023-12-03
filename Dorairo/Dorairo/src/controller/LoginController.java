@@ -60,7 +60,7 @@ public class LoginController {
 
 		// Comprueba que exista un perfil con ese usuario y contraseñas
 		if (Main.comprobarPerfil(usuario, contrasena)) {
-			Utils.mostrarAlerta("Inicio de sesión exitoso. ¡Bienvenido, " + usuario + "!", Constants.INFORMATION_TYPE);
+			Utils.mostrarAlerta("Inicio de sesión exitoso. ¡Bienvenido/a, " + usuario + "!", Constants.INFORMATION_TYPE);
 		} else {
 			Utils.mostrarAlerta("Error de inicio de sesión. Usuario o contraseña incorrectos", Constants.ERROR_TYPE);
 		}
