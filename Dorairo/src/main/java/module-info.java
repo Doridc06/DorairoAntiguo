@@ -1,8 +1,9 @@
-module application {
-    requires javafx.controls;
-    requires javafx.fxml;
+module Dorairo {
+	requires javafx.controls;
+	requires javafx.fxml;
+	requires javafx.base;
+	requires javafx.graphics;
 
-    opens application to javafx.fxml;
-    exports application to javafx.graphics;
-    opens controller to javafx.fxml;
+	opens application to javafx.graphics, javafx.fxml;
+	opens controller to javafx.fxml;
 }
