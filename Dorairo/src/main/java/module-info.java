@@ -3,5 +3,6 @@ module application {
     requires javafx.fxml;
 
     opens application to javafx.fxml;
-    exports application;
+    exports application to javafx.graphics;
+    opens controller to javafx.fxml;
 }

@@ -2,6 +2,10 @@ package models;
 
 import java.util.Date;
 
+/**
+ * Clase que gestiona el perfil del usuario
+ * 
+ */
 public class Perfil {
 
 	private String usuario;
@@ -12,7 +16,7 @@ public class Perfil {
 	private Date fecha;
 
 	/**
-	 * Constructor para generar un nuevo usuario
+	 * Constructor para generar un nuevo perfil de usuario
 	 * 
 	 * @param usuario
 	 * @param nombre

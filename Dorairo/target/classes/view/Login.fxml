@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -49,21 +48,13 @@
             </Label>
             <StackPane fx:id="stackPaneLogo" layoutX="128.0" layoutY="46.0" prefHeight="150.0" prefWidth="150.0">
                <children>
-                  <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../resources/application/images/logoDorairo.jpg" />
-                     </image>
-                  </ImageView>
+                  <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </StackPane>
             <PasswordField fx:id="pwContrasena" layoutX="69.0" layoutY="367.0" prefHeight="25.0" prefWidth="261.0" />
             <StackPane fx:id="stackPanePortada" layoutX="399.0" prefHeight="619.0" prefWidth="522.0">
                <children>
-                  <ImageView fx:id="imgPortada" fitHeight="619.0" fitWidth="532.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../resources/application/images/escenario.png" />
-                     </image>
-                  </ImageView>
+                  <ImageView fx:id="imgPortada" fitHeight="619.0" fitWidth="532.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </StackPane>
             <Line endX="19.0" layoutX="165.0" layoutY="505.0" startX="-100.0" />

@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 import models.Perfil;
 import utilities.Utils;
 
+/**
+ * Clase principal, gestiona el lanzamiento del programa
+ * 
+ */
 public class Main extends Application {
 
 	/** Lista donde se guardan cada uno de los perfiles registrados */

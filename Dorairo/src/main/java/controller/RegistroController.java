@@ -13,6 +13,10 @@ import javafx.stage.Stage;
 import models.Perfil;
 import utilities.Utils;
 
+/**
+ * Clase con las funciones del registro
+ * 
+ */
 public class RegistroController {
 
 	@FXML
@@ -33,12 +37,12 @@ public class RegistroController {
 	@FXML
 	private TextField txtUsuario;
 
-	@FXML
 	/**
 	 * Registra un nuevo perfil según los datos que se hayan introducido
 	 * 
 	 * @param event
 	 */
+	@FXML
 	void buttonRegistrarsePressed(MouseEvent event) {
 		String usuario = txtUsuario.getText();
 		String correo = txtCorreo.getText();
